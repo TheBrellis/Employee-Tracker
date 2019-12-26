@@ -65,15 +65,17 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {{#each employees}}
                     <tr>
-                        <td>ID</td>
-                        <td>firstName</td>
-                        <td>lastName</td>
-                        <td>title</td>
-                        <td>department</td>
-                        <td>Salary</td>
-                        <td>Manager</td>
+                        <td>{{id}}</td>
+                        <td>{{first_name}}</td>
+                        <td>{{last_name}}</td>
+                        <td>{{title}}</td>
+                        <td>{{department}}</td>
+                        <td>{{salary}}</td>
+                        <td>{{manager}}</td>
                     </tr>
+                    {{/each}}
                 </tbody>
             </table>
         </div>

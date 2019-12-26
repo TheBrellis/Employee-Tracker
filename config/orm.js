@@ -3,7 +3,7 @@ const connection = require("../config/connection.js");
 const orm = {
     readAll: function (input, cb) {
         let queryString = `SELECT
-        employees.id as ID, 
+        employees.id as id, 
         employees.first_name as first_name, 
         employees.last_name as last_name,
         roles.title as title,
