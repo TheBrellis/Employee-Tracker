@@ -1,17 +1,19 @@
 const express = require('express');
-const exphbs = require("express-handlebars");
-const app = express();
-
-require('dotenv').config();
 
 const PORT = process.env.PORT || 8080;
-// handlebars middle-ware
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-// express middle-ware
+
+const app = express();
+
+app.use(express.static("./public/"));
+
+
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
+const exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 const routes = require('./controllers/dataController.js');
 
 app.use(routes);

@@ -1,1 +1,0 @@
-// This index . js will handle all of the click events and generating the correct modals.
