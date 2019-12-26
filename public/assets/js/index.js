@@ -1,8 +1,15 @@
 $(function() {
     $("#query-all").on("click", function(event) {
-        $.ajax("/api/all/")
+        console.log(event);
+        /*
+        $.ajax({
+            method: "GET",
+            url: "/api/all",
+        }).then(
+            console.log(res)
+        );
+        */
     })
-
 
 
 });

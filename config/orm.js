@@ -21,12 +21,13 @@ const orm = {
         LEFT JOIN
         managers
         ON (employees.manager_id = managers.id)`;
-    connection.query(queryString, function (err, result) {
-        if (err) {
-            throw err;
-        }
-        cb(result);
-    })
+
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        })
     }
 }
 
