@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 //Importing orm model
-const employees = rquire("../models/employees.js");
+const employees = require("../models/employees.js");
 
 // Create all routes for iteracting SQL database
 router.get("/", function(req, res) {
