@@ -11,9 +11,9 @@ app.set("view engine", "handlebars");
 // express middle-ware
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
-//app.use(express.static("public"));
 
-const routes = require('./routes');
+const routes = require('./controllers/dataController.js');
+
 app.use(routes);
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
