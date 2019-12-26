@@ -1,2 +1,8 @@
-// This index . js will handle all of the click events and generating the correct modals.
-console.log("Hello");
+$(function() {
+    $("#query-all").on("click", function(event) {
+        $.ajax("/api/all/")
+    })
+
+
+
+});
