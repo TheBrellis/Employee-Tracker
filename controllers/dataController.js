@@ -6,25 +6,29 @@ const employee = require("../models/employees.js");
 
 // Create all routes for iteracting with SQL database
 router.get("/", function (req, res) {
-    /*
-    employee.readAll(function (data) {
+    res.render("index")
+});
+
+router.get("/api/all", function (req, res) {
+    employee.read("all",null,function (data) {
         let dataObject = {
             employees: data
         };
-        */
-    res.render("index")
+        res.render("index", dataObject)
+    });
 });
-    
 
-
-router.get("/api/all", function (req, res) {
-        employee.readAll(function (data) {
+router.get("/api/:query/:criteria", function (req, res) {
+    const query = req.params.query;
+    const criteria = req.params.criteria;
+    if (query === "departments") {
+        employee.read(query,criteria, function (data) {
             let dataObject = {
                 employees: data
             };
-        res.render("index", dataObject)
-        });
-        
+            res.render("index",dataObject)
+        })
+    };
 });
 
 module.exports = router;

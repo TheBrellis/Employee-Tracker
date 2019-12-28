@@ -1,8 +1,9 @@
 const connection = require("../config/connection.js");
 
 const orm = {
-    readAll: function (input, cb) {
-        let queryString = `SELECT
+    read: function (query, criteria, cb) {
+
+        let mainQueryString = `SELECT
         employees.id as id, 
         employees.first_name as first_name, 
         employees.last_name as last_name,
@@ -20,14 +21,28 @@ const orm = {
         ON (employees.role_id = roles.id)
         LEFT JOIN
         managers
-        ON (employees.manager_id = managers.id)`;
+        ON (employees.manager_id = managers.id)`
 
-        connection.query(queryString, function (err, result) {
-            if (err) {
-                throw err;
-            }
-            cb(result);
-        })
+
+        if (query === "all") {
+            connection.query(mainQueryString, function (err, result) {
+                if (err) {
+                    throw err;
+                }
+                cb(result);
+            })
+
+        } else {
+            connection.query(mainQueryString+` WHERE ??.name = ?`,
+                [query, criteria],
+                function (err, result) {
+                    if (err) {
+                        throw err;
+                    }
+                    console.log(result.sql);
+                    cb(result);
+                })
+        }
     }
 }
 

@@ -1,8 +1,8 @@
 INSERT INTO departments (name) VALUES 
-	("SALES"),
-	("ENGINEERING"),
-	("FINANCE"),
-	("LEGAL")
+	("Sales"),
+	("Engineering"),
+	("Finance"),
+	("Legal")
 ;
 
 INSERT INTO roles(title) VALUES

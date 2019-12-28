@@ -1,8 +1,8 @@
 const orm = require("../config/orm.js");
 
 const employee = {
-    readAll: function(cb) {
-        orm.readAll(null,function(res) {
+    read: function(query,criteria,cb) {
+        orm.read(query,criteria,function(res) {
             cb(res);
         })
     }
