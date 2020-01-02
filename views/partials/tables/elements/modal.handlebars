@@ -1,5 +1,6 @@
 <!-- START OF MODAL --->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -8,7 +9,23 @@
         </button>
       </div>
       <div class="modal-body">
-        {{> tables/elements/forms}}
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Which Department would you like to search?</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option value="" selected disabled>Search...</option>
+              <option value="Sales">Sales</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Finance">Finance</option>
+              <option value="Legal">Legal</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="query-department" type="button" class="search btn btn-secondary"
+          data-dismiss="modal">Search</button>
+      </div>
     </div>
   </div>
 </div>
