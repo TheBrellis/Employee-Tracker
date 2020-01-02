@@ -4,6 +4,8 @@ $(function() {
         window.location.replace("/api/all");
     });
 
+    
+
     $("#query-department").on("click", function(event) {
         event.preventDefault();
         let id = $(exampleFormControlSelect1).val();
