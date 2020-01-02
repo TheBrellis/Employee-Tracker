@@ -9,7 +9,7 @@ router.get("/", function (req, res) {
     res.render("index")
 });
 
-router.get("/api/:type/:set", function (req,res) {
+router.get("/api/form/:type/:set", function (req,res) {
     const type = req.params.type;
     const set = req.params.set;
     if (type === "query" && set === "department") {
@@ -18,9 +18,9 @@ router.get("/api/:type/:set", function (req,res) {
             query : true,
             department : true
         }
-        res.render("index", formSet)
+        res.render("modal", formSet)
     }
-})
+});
 
 router.get("/api/all", function (req, res) {
     employee.read("all",null,function (data) {

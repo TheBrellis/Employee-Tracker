@@ -15,11 +15,4 @@ $(function() {
         let id = $(exampleFormControlSelect1).val();
         window.location.replace(`/api/departments/${id}`);
        });
-
-    
-
-
-
-
-
 });
