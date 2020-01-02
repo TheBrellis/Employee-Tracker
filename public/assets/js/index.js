@@ -7,8 +7,7 @@ $(function() {
     $("a[data-link = 'form']").on("click", function(event) {
         let type = $(this).data("type");
         let set = $(this).data("set");
-        console.log(type,set);
-     //   window.location.replace(`/api/form/${type}/${set}`)
+        window.location.replace(`/api/form/${type}/${set}`)
     })
 
     $("#query-department").on("click", function(event) {

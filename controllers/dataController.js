@@ -9,6 +9,19 @@ router.get("/", function (req, res) {
     res.render("index")
 });
 
+router.get("/api/form/:type/:set", function (req, res) {
+    const type = req.params.type;
+    const set = req.params.type;
+    if (type === "query" && set === "department"){
+        let formSet = 
+        {
+            query: true,
+            department: true
+        }
+    res.render("index", formSet);
+    }
+})
+
 router.get("/api/all", function (req, res) {
     employee.read("all",null,function (data) {
         let dataObject = {
