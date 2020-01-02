@@ -39,7 +39,6 @@ const orm = {
                     if (err) {
                         throw err;
                     }
-                    console.log(result.sql);
                     cb(result);
                 })
         }
