@@ -1,6 +1,6 @@
 <form>
   {{#if query}}
-    {{#if department}}
+        {{#if department}}
         <div class="form-group">
           <label for="exampleFormControlSelect1">Which Department would you like to search?</label>
           <select class="form-control" id="exampleFormControlSelect1">
@@ -11,7 +11,28 @@
             <option value="Legal">Legal</option>
           </select>
         </div>
-    {{/if}}
+        </div>
+        <div class="modal-footer">
+          <button id="query-department" type="button" class="search btn btn-secondary" data-dismiss="modal">Search</button>
+        </div>
+        {{/if}}
+
+        {{#if manager}}
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Which Manager would you like to search?</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option value="" selected disabled>Search...</option>
+            <option value="John">John</option>
+            <option value="Karen">Karen</option>
+            <option value="Larry">Larry</option>
+            <option value="Stan">Stan</option>
+          </select>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button id="query-manager" type="button" class="search btn btn-secondary" data-dismiss="modal">Search</button>
+        </div>
+        {{/if}}
   {{/if}}
 
 

@@ -22,6 +22,16 @@ router.get("/api/form/:type/:set", function (req,res) {
         }
         res.render("modal", formSet)
     }
+    if (type === "query" && set === "manager") {
+        let formSet = 
+        {
+            formSet: 
+                [{query : true,
+                 manager : true
+                }]
+        }
+        res.render("modal", formSet)
+    }
 });
 
 router.get("/api/all", function (req, res) {
@@ -37,6 +47,14 @@ router.get("/api/:query/:criteria", function (req, res) {
     const query = req.params.query;
     const criteria = req.params.criteria;
     if (query === "departments") {
+        employee.read(query,criteria, function (data) {
+            let dataObject = {
+                employees: data
+            };
+            res.render("index",dataObject)
+        })
+    };
+    if (query === "managers") {
         employee.read(query,criteria, function (data) {
             let dataObject = {
                 employees: data
