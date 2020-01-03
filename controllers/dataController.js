@@ -15,8 +15,10 @@ router.get("/api/form/:type/:set", function (req,res) {
     if (type === "query" && set === "department") {
         let formSet = 
         {
-            query : true,
-            department : true
+            formSet: 
+                [{query : true,
+                 department : true
+                }]
         }
         res.render("modal", formSet)
     }
