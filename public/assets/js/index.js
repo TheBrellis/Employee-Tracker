@@ -8,7 +8,7 @@ $(function () {
         let type = $(this).data("type");
         let set = $(this).data("set");
         window.location.replace(`/api/form/${type}/${set}`)
-    })
+    });
 
     $("#query-department").on("click", function (event) {
         event.preventDefault();
